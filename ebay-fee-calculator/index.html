@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en-US" class="layout-bold">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eBay Fee Calculator: Final Value Fee &amp; Profit</title>
+<meta name="description" content="Calculate eBay final value fees, per-order fee and promoted listing costs, then see your profit after shipping and item cost.">
+<link rel="canonical" href="https://marketplacefeecalc.com/ebay-fee-calculator/">
+<meta property="og:title" content="eBay Fee Calculator: Final Value Fee &amp; Profit">
+<meta property="og:description" content="Calculate eBay final value fees, per-order fee and promoted listing costs, then see your profit after shipping and item cost.">
+<meta property="og:url" content="https://marketplacefeecalc.com/ebay-fee-calculator/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/layouts.css">
+<style>:root{--brand:#1e5fd6;--accent:#0891b2;--bg:#dbe3f0;--surface:#f0f4fb;--soft:#e4ebf6;--sunken:#ccd7ea;--ink:#111a2e;--ink-2:#2b3852;--muted:#56637d;--line:#b9c6de;--line-strong:#9aaccb;--brand-ink:color-mix(in srgb,var(--brand) 82%,#000 18%);--brand-soft:color-mix(in srgb,var(--brand) 9%,var(--bg));--brand-line:color-mix(in srgb,var(--brand) 28%,var(--line));--warn:#8a4b00;--warn-bg:color-mix(in srgb,#f59e0b 16%,var(--surface));--ok:#0f7b46}:root[data-theme="light"]{--brand:#1e5fd6;--accent:#0891b2;--bg:#dbe3f0;--surface:#f0f4fb;--soft:#e4ebf6;--sunken:#ccd7ea;--ink:#111a2e;--ink-2:#2b3852;--muted:#56637d;--line:#b9c6de;--line-strong:#9aaccb;--brand-ink:color-mix(in srgb,var(--brand) 82%,#000 18%);--brand-soft:color-mix(in srgb,var(--brand) 9%,var(--bg));--brand-line:color-mix(in srgb,var(--brand) 28%,var(--line));--warn:#8a4b00;--warn-bg:color-mix(in srgb,#f59e0b 16%,var(--surface));--ok:#0f7b46}:root[data-theme="dark"]{--brand:#1e5fd6;--accent:#0891b2;--bg:#dbe3f0;--surface:#f0f4fb;--soft:#e4ebf6;--sunken:#ccd7ea;--ink:#111a2e;--ink-2:#2b3852;--muted:#56637d;--line:#b9c6de;--line-strong:#9aaccb;--brand-ink:color-mix(in srgb,var(--brand) 82%,#000 18%);--brand-soft:color-mix(in srgb,var(--brand) 9%,var(--bg));--brand-line:color-mix(in srgb,var(--brand) 28%,var(--line));--warn:#8a4b00;--warn-bg:color-mix(in srgb,#f59e0b 16%,var(--surface));--ok:#0f7b46}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Marketplace Fee Calc","item":"https://marketplacefeecalc.com/"},{"@type":"ListItem","position":2,"name":"eBay Fee Calculator","item":"https://marketplacefeecalc.com/ebay-fee-calculator/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"eBay Fee Calculator","url":"https://marketplacefeecalc.com/ebay-fee-calculator/","description":"Calculate eBay final value fees, per-order fee and promoted listing costs, then see your profit after shipping and item cost.","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script src="/assets/calculator.js" defer></script>
+<script src="/assets/calc-core.js" defer></script>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}})()</script>
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/icon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/brand/icon-180.png">
+<link rel="manifest" href="/assets/brand/site.webmanifest">
+<meta name="theme-color" content="#1e5fd6">
+<meta property="og:image" content="https://marketplacefeecalc.com/assets/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://marketplacefeecalc.com/assets/brand/og.png">
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="/" aria-label="Marketplace Fee Calc home"><span class="logo-mark"><img class="lk" src="/assets/brand/lockup.svg" alt="" width="821" height="228" loading="eager"></span></a><nav class="site"><a href="/etsy-fee-calculator/">Etsy Fee</a><a href="/etsy-profit-calculator/">Etsy Profit</a><a href="/ebay-fee-calculator/">eBay Fee</a></nav></div></header>
+<main><div class="wrap">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › eBay Fee Calculator</nav>
+<div class="hero">
+<div>
+
+<h1>eBay Fee Calculator</h1>
+<p class="answer">eBay’s final value fee is <strong>13.6% of the total amount of the sale in most categories</strong>, on the first $7,500 per item, plus a per-order fee of $0.30 on orders of $10.00 or less and $0.40 on orders above $10.00. This eBay fee calculator applies both to your sale and shows the profit left after item cost and shipping.</p>
+<p class="updated">Updated <time datetime="2026-09-16">16 September 2026</time></p>
+</div>
+<figure class="hero-art hero-photo"><img src="/assets/img/p-ebay-fee-calculator.jpg" alt="A woman standing next to a cardboard box on top of a table" width="900" height="600" loading="eager" decoding="async"><figcaption>Photo by <a href="https://unsplash.com/@mcoopercreative?utm_source=marketplace_calc&utm_medium=referral" rel="nofollow noopener">M. Cooper</a> on <a href="https://unsplash.com/?utm_source=marketplace_calc&utm_medium=referral" rel="nofollow noopener">Unsplash</a></figcaption></figure>
+</div>
+<div id="calculator" data-calc="ebayFees"><noscript>This calculator needs JavaScript turned on.</noscript></div>
+
+<div class="ad-slot"><!-- Ad slot 1 (below the tool). Leave empty until AdSense is approved. --></div>
+<section class="sec">
+<h2>eBay fees explained (dated, sourced)</h2>
+<p>eBay charges sellers in three places: an insertion fee to list, a final value fee when the item sells, and a per-order fee on every order. Rates below are from eBay’s own selling fees page, checked 19 September 2026.</p>
+<table>
+<thead><tr><th>Fee</th><th>Amount</th><th>When it applies</th></tr></thead>
+<tbody>
+<tr><td>Final value fee (most categories)</td><td>13.6% up to $7,500 per item, then 2.35% on the portion above $7,500</td><td>On the total amount of the sale</td></tr>
+<tr><td>Per-order fee</td><td>$0.30 on orders of $10.00 or less; $0.40 on orders over $10.00</td><td>Once per order, not per item</td></tr>
+<tr><td>Insertion fee</td><td>First 250 listings free each month, then $0.35 per listing</td><td>When you list, whether or not it sells</td></tr>
+</tbody>
+</table>
+<p>The phrase that trips sellers up is <strong>total amount of the sale</strong>. eBay defines it as the item price plus handling, plus any shipping you charge the buyer, plus sales tax. The fee is not taken on the item price alone, so a $50 item with $8 shipping is charged on $58, and collected sales tax is inside that base too.</p>
+<p>The calculator above uses one flat final value rate, which is correct for any single item selling at $7,500 or less. Above that threshold, only the portion over $7,500 drops to 2.35%, so split the sale in two if you are pricing a high-value item. Store subscription discounts and international selling fees are not included. Source: <a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees" rel="nofollow noopener">eBay: selling fees</a>.</p>
+</section>
+<section class="sec">
+<h2>Final value fee by category (table)</h2>
+<p>Most categories sit at 13.6%, but several do not, and picking the wrong rate is the single biggest error in a fee estimate. These are the category rates from eBay’s selling fees page, checked 19 September 2026.</p>
+<table>
+<thead><tr><th>Category</th><th>Final value fee</th></tr></thead>
+<tbody>
+<tr><td>Most categories</td><td>13.6% up to $7,500, then 2.35% above</td></tr>
+<tr><td>Books, Movies &amp; Music</td><td>15.3%</td></tr>
+<tr><td>Women’s Handbags</td><td>15% up to $2,000, then 9% above</td></tr>
+<tr><td>Jewelry &amp; Watches</td><td>15% up to $5,000, then 9% above</td></tr>
+<tr><td>NFTs</td><td>5%</td></tr>
+</tbody>
+</table>
+<p>Two things follow from the tiers. First, the reduced rate applies only to the portion of the price above the threshold, never to the whole sale: a handbag at $2,400 is charged 15% on $2,000 and 9% on the remaining $400. Second, the thresholds are per item, so two $1,500 handbags in one order are each charged at 15%.</p>
+<p>The category rate is an editable input in the calculator, so change 13.6% to the rate that matches your listing before reading the result. If your item sits near a category boundary, check the rate on the listing itself rather than guessing. Full table: <a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees" rel="nofollow noopener">eBay: selling fees</a>.</p>
+</section>
+<section class="sec">
+<h2>Worked example</h2>
+<p>Take a $50 item with $8 shipping charged to the buyer, no sales tax, in a standard 13.6% category. You paid $15 for the item and $9 for the label and packaging.</p>
+<table>
+<thead><tr><th>Line</th><th>Amount</th></tr></thead>
+<tbody>
+<tr><td>Item price</td><td>$50.00</td></tr>
+<tr><td>Shipping charged to buyer</td><td>$8.00</td></tr>
+<tr><td>Total amount of the sale</td><td>$58.00</td></tr>
+<tr><td>Final value fee, 13.6% of $58.00</td><td>−$7.89</td></tr>
+<tr><td>Per-order fee (order is over $10.00)</td><td>−$0.40</td></tr>
+<tr><td>Item cost</td><td>−$15.00</td></tr>
+<tr><td>Your shipping cost (label + packaging)</td><td>−$9.00</td></tr>
+<tr><td>Profit</td><td>$25.71</td></tr>
+</tbody>
+</table>
+<p>Total eBay fees are $8.29, or 14.3% of the $58 the buyer paid. The headline rate is 13.6%, so the gap is the flat $0.40, and that gap widens fast on cheap items: an $8 sale pays $1.09 in final value fee plus the $0.30 low-order fee, a total of $1.39, which is 17.4% of the sale.</p>
+<p>Note what shipping does here. Charging the buyer $8 for a label that costs you $9 does not make shipping free: you lose the $1 difference and pay 13.6% on the $8 as well. Free shipping built into the item price is charged the same way, so the fee lands on the shipping either way.</p>
+</section>
+<section class="sec is-wide">
+<h2>Promoted listings</h2>
+<p>Promoted listings are optional. You choose an ad rate, and if a buyer buys after clicking your promoted listing, eBay charges that percentage of the sale on top of the final value fee and the per-order fee.</p>
+<p>That makes the ad rate a direct cut of your margin, and it stacks. In a 13.6% category, a 5% ad rate takes the fee load to 18.6% of the sale plus the per-order fee. On the $58 sale above, 5% is another $2.90, which turns $25.71 of profit into $22.81. Set the ad rate in the calculator and watch the profit line before you set it in Seller Hub.</p>
+<p>The rate is yours to pick, so treat it as a price you are willing to pay for placement rather than a fixed cost of selling. Items with thin margins, low-priced items where the per-order fee already bites, and items that sell quickly without help are the poorest candidates for a high ad rate.</p>
+<p>You are charged the ad fee only on sales attributed to the ad, so an unpromoted sale of the same listing costs you nothing extra. Ad rates and attribution rules are set out on <a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees" rel="nofollow noopener">eBay: selling fees</a>.</p>
+</section>
+<section class="sec">
+<h2>Frequently asked questions</h2>
+<div class="faq">
+<details><summary>How much does eBay take for a fee?</summary><p>In most categories eBay takes 13.6% of the total amount of the sale, plus a per-order fee of $0.30 on orders of $10.00 or less or $0.40 on larger orders. The 13.6% applies to the first $7,500 of an item’s price; the portion above that is charged at 2.35%. Some categories differ, and promoted listing ad rates are charged on top.</p></details>
+<details><summary>Is the eBay fee 15%?</summary><p>Not in most categories. The standard final value fee is 13.6%, not 15%. The 15% figure comes from specific categories: Women’s Handbags at 15% up to $2,000 and Jewelry &amp; Watches at 15% up to $5,000, each dropping to 9% above those amounts. Books, Movies &amp; Music are higher still at 15.3%, and NFTs are 5%. Check your own category before estimating.</p></details>
+<details><summary>How much does eBay take on a $2500 sale?</summary><p>About $340.40 in a standard 13.6% category, on a $2,500 total with no shipping or tax added. That is 13.6% of $2,500, which is $340.00, plus the $0.40 per-order fee. Add shipping and sales tax to the base first if the buyer paid either, since the fee is charged on the total amount of the sale. A promoted listing ad rate would add more.</p></details>
+<details><summary>How much are eBay fees on $1200?</summary><p>About $163.60 in a standard 13.6% category: $163.20 for the final value fee plus the $0.40 per-order fee, on a $1,200 total. In Books, Movies &amp; Music at 15.3% the same sale costs $184.00. If the buyer also paid shipping or sales tax, add those to the $1,200 before applying the rate, because the fee is charged on the full order total.</p></details>
+</div>
+</section>
+<section class="sec is-short">
+<h2>Sources</h2>
+<ul class="sources">
+<li><a href="https://www.etsy.com/legal/fees" rel="nofollow noopener">Etsy: Fees &amp; Payments Policy</a></li>
+<li><a href="https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees" rel="nofollow noopener">eBay: selling fees</a></li>
+</ul>
+</section>
+<section class="sec is-short">
+<h2>Related</h2>
+<ul>
+<li><a href="/etsy-fee-calculator/">Etsy Fee Calculator</a></li>
+<li><a href="/etsy-profit-calculator/">Etsy Profit Calculator</a></li>
+<li><a href="/etsy-fees/">Etsy Fees Explained</a></li>
+<li><a href="/etsy-vs-ebay-fees/">Etsy vs eBay Fees</a></li>
+</ul>
+<p class="disclaimer">Estimates only. Fees change; confirm on the marketplace’s own fee page. Not affiliated with Etsy, Inc. or eBay Inc.</p>
+</section>
+</div></main>
+<footer class="site"><div class="wrap">
+<div class="f-brand"><a class="footer-brand" href="/" aria-label="Marketplace Fee Calc home"><span class="logo-mark"><img class="lk" src="/assets/brand/lockup.svg" alt="" width="821" height="228" loading="eager"></span></a></div>
+<nav class="f-col" aria-label="Calculators"><h3>Calculators</h3><ul><li><a href="/etsy-fee-calculator/">Etsy Fee Calculator</a></li><li><a href="/etsy-profit-calculator/">Etsy Profit Calculator</a></li><li><a href="/ebay-fee-calculator/">eBay Fee Calculator</a></li></ul></nav>
+<nav class="f-col" aria-label="Guides"><h3>Guides</h3><ul><li><a href="/etsy-fees/">Etsy Fees Explained</a></li><li><a href="/etsy-vs-ebay-fees/">Etsy vs eBay Fees</a></li></ul></nav>
+<nav class="f-col" aria-label="Company"><h3>Company</h3><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></nav>
+<div class="f-legal"><p>Estimates only. Fees change; confirm on the marketplace’s own fee page. Not affiliated with Etsy, Inc. or eBay Inc.</p><p>© <span id="y"></span> Marketplace Fee Calc</p></div>
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+</body>
+</html>
