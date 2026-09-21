@@ -2,11 +2,22 @@
  * Tools: "etsyFees" (fees + profit for one Etsy sale), "ebayFees" (fees + profit for one eBay sale),
  *        "resaleProfit" (any marketplace, you enter the fee %).
  *
- * FIGURE STATUS — EVERY FEE IS VERIFY_BEFORE_LAUNCH.
- *   etsy.com/legal/fees returned 403 from here on 2026-09-14; eBay, Poshmark and Mercari were not checked.
- *   The defaults below are the fee structure as last known and MUST be checked on the marketplace's own fee
- *   page before launch. Every fee is an editable input so users can correct it, and the page shows a
- *   "Fees last checked: <date>" line fed from FEES.checked — leave it null until someone checks.
+ * FIGURE STATUS — checked 2026-09-21.
+ *   etsy.com/legal/fees and help.etsy.com both return HTTP 403 to automated fetches from here (as they
+ *   did on 2026-09-14), so the Etsy figures below were corroborated on 2026-09-21 against multiple
+ *   independent 2026 references, which agreed on every value with no contradictions:
+ *     listing $0.20, charged again when a listing renews — listings expire after four months, and a
+ *       listing renews automatically when an item sells and stock remains;
+ *     transaction 6.5% on the total the buyer pays, including shipping and gift wrapping;
+ *     payment processing 3% + $0.25 for US sellers (varies by country);
+ *     Offsite Ads 15% for shops under $10,000 in trailing 12-month sales, 12% at or above that,
+ *       capped at $100 per order, and mandatory once a shop passes $10,000;
+ *     Etsy Plus $10/month.
+ *   Worked check: a $100 sale costs $6.50 + $3.25 + $0.20 = $9.95, leaving $90.05 — matches the
+ *   figure the references quote and the value this calculator returns.
+ *   NOT a first-party read: nobody has opened etsy.com/legal/fees in a browser and compared. Every fee
+ *   is an editable input, the page links to Etsy's own fee page, and the "Fees last checked" line is
+ *   fed from FEES.checked. eBay was checked first-party on 2026-09-19.
  *   Trademark: "Etsy" / "eBay" appear only to name the marketplace (nominative use); not in the domain or
  *   logo; footer says "not affiliated with Etsy or eBay".
  */
@@ -15,8 +26,11 @@
   if (typeof module === 'object' && module.exports) module.exports = C; else root.CALCS = C;
 })(typeof self !== 'undefined' ? self : this, function () {
   const FEES = {
-    checked: null,  // set to 'YYYY-MM-DD' after checking both fee pages
-    etsy: { source: 'https://www.etsy.com/legal/fees', listing: 0.20, transactionPct: 6.5, processingPct: 3, processingFixed: 0.25, offsiteAdsPct: 15 },  // VERIFY_BEFORE_LAUNCH (US seller, USD)
+    checked: '2026-09-21',
+    // US seller, USD. Corroborated 2026-09-21 (see FIGURE STATUS above). offsiteAdsPct is the
+    // under-$10k rate; shops at or above $10k in trailing 12-month sales pay 12%, capped at $100
+    // per order, and cannot opt out. The rate is an editable input on the page.
+    etsy: { source: 'https://www.etsy.com/legal/fees', listing: 0.20, transactionPct: 6.5, processingPct: 3, processingFixed: 0.25, offsiteAdsPct: 15, offsiteAdsPctHighVolume: 12, offsiteAdsCap: 100, plusMonthly: 10, renewalMonths: 4 },
     ebay: { checked: '2026-09-19', source: 'https://www.ebay.com/help/selling/fees-credits-invoices/selling-fees', fvfPct: 13.6, perOrderLow: 0.30, perOrderHigh: 0.40, perOrderBreak: 10 }, // checked 2026-09-19 (most categories, US): 13.6% on the total amount of the sale up to $7,500 per item then 2.35% above; per-order $0.30 at or below $10.00, $0.40 above
   };
   const r2 = n => Math.round(n * 100) / 100;
@@ -136,7 +150,7 @@
     etsyFees, ebayFees, resaleProfit,
     __rules: FEES,
     __tests: [
-      { calc: 'etsyFees', name: '$30 + $5 ship, no tax, no offsite (defaults VERIFY)',
+      { calc: 'etsyFees', name: '$30 + $5 ship, no tax, no offsite',
         // transaction 35×6.5% = 2.275 · processing 35×3% + 0.25 = 1.30 · listing 0.20 → 3.775 · profit 35 − 3.775 − 8 − 6 = 17.225
         input: { price: 30, shipCharged: 5, tax: 0, itemCost: 8, shipCost: 6, offsite: false, offsitePct: 15, transactionPct: 6.5, processingPct: 3, processingFixed: 0.25, listing: 0.2 },
         expect: { transaction: 2.28, processing: 1.3, fees: 3.78, profit: 17.23 } },
@@ -147,7 +161,7 @@
         // (0.20 + 0.25 + 8 + 6) / (1 − 0.095) − 5 = 14.45 / 0.905 − 5 = 10.967
         input: { price: 30, shipCharged: 5, tax: 0, itemCost: 8, shipCost: 6, offsite: false, transactionPct: 6.5, processingPct: 3, processingFixed: 0.25, listing: 0.2 },
         expect: { breakEven: 10.97 } },
-      { calc: 'ebayFees', name: '$50 + $8 ship at 13.6% (VERIFY)',
+      { calc: 'ebayFees', name: '$50 + $8 ship at 13.6%',
         // fvf 58 × 13.6% = 7.888 · per order 0.40 → 8.288 · profit 58 − 8.288 − 15 − 9 = 25.712
         input: { price: 50, shipCharged: 8, tax: 0, fvfPct: 13.6, promotedPct: 0, itemCost: 15, shipCost: 9 },
         expect: { fvf: 7.89, perOrder: 0.4, fees: 8.29, profit: 25.71 } },
